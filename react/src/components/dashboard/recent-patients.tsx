@@ -105,7 +105,6 @@ export default function RecentPatients() {
               </div>
             </div>
 
-            {/* Desktop / larger screens: original full row */}
             <div className="hidden sm:flex items-center justify-between p-4 rounded-lg border border-border hover:bg-secondary/20 transition-colors">
               <div className="flex-1">
                 <div className="flex items-center gap-3">
