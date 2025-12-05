@@ -44,7 +44,7 @@ export function Hero() {
   const [selected, setSelected] = useState<any | null>(null)
   const [saved, setSaved] = useState<Array<any>>([])
   const [highlightedIndex, setHighlightedIndex] = useState<number>(-1)
-  const [showList, setShowList] = useState(false)
+  // const [showList, setShowList] = useState(false)
   const [sending, setSending] = useState(false)
   const [sendLog, setSendLog] = useState<string | null>(null)
 
@@ -117,7 +117,6 @@ export function Hero() {
   useEffect(() => {
     // reset highlighted index when filtered results change
     setHighlightedIndex(filtered.length > 0 ? 0 : -1)
-    setShowList(filtered.length > 0 && query.trim() !== '')
   }, [filtered.length])
 
   const listboxId = 'icd-listbox'
@@ -135,14 +134,12 @@ export function Hero() {
       if (highlightedIndex >= 0 && highlightedIndex < filtered.length) {
         const sel = filtered[highlightedIndex]
         setSelected(sel)
-        setShowList(false)
         setHighlightedIndex(-1)
         setQuery('')
       }
     } else if (e.key === 'Escape') {
       e.preventDefault()
       setHighlightedIndex(-1)
-      setShowList(false)
     }
   }
 
@@ -395,7 +392,7 @@ export function Hero() {
                               key={d.id}
                               onClick={() => {
                                 setSelected(d)
-                                setShowList(false)
+                                
                                 setHighlightedIndex(-1)
                                 setQuery('')
                               }}

@@ -37,15 +37,15 @@ export function Community() {
     },
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  }
+  // const itemVariants = {
+  //   hidden: { opacity: 0, y: 20, scale: 0.95 },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     scale: 1,
+  //     transition: { duration: 0.6, ease: "easeOut" },
+  //   },
+  // }
 
   return (
     <section id="community" className="relative py-20 md:py-32 bg-gradient-to-b from-background via-muted/30 to-background">
@@ -72,7 +72,7 @@ export function Community() {
           viewport={{ once: true }}
         >
           {testimonials.map((testimonial, index) => (
-            <motion.div key={index} variants={itemVariants}>
+            <div key={index}>
               <Card className="p-8 lg:p-10 bg-card/98 backdrop-blur-sm border border-border/60 hover:border-border/80 hover:shadow-2xl hover:shadow-primary/8 transition-all duration-300 rounded-2xl group">
                 <div className="flex gap-1 mb-6">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -85,7 +85,7 @@ export function Community() {
                   <p className="text-sm text-primary font-semibold">{testimonial.role}</p>
                 </div>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </div>
